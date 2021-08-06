@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <title>Contacto Agregado</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5 text">
+        <div class="card mt-5 p-5 text-center">
+            <h4>Contacto {{nombre}} agregado</h4>
+            <a href="{{url_for('index')}}"><button class="btn btn-danger">Ok</button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

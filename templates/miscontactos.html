@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <table class="table bg-dark text-white my-5">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Operaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        {% for contact in contacts %}
+                        <p>{{contact['id_contacto']}}</p>
+                        {% endfor %}
+
+                    </th>
+                    <td>
+                        {% for contact in contacts %}
+                        <p>{{contact['nombre']}}</p>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for contact in contacts %}
+                        <p>{{contact['telefono']}}</p>
+                        {% endfor %}
+                    </td>
+
+                    <td>
+                        {% for contact in contacts %}
+                        <p>{{contact['correo']}}</p>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="/edit_contact">Editar</a>
+                        <a href="/delete_contact/11">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

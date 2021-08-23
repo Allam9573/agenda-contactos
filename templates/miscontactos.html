@@ -12,47 +12,21 @@
 <body>
     {% include 'navbar.html' %}
     <div class="container">
-        <table class="table bg-dark text-white my-5">
-            <thead>
-                <tr>
-                    <th scope="col">#ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Operaciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        {% for contact in contacts %}
-                        <p>{{contact['id_contacto']}}</p>
-                        {% endfor %}
-
-                    </th>
-                    <td>
-                        {% for contact in contacts %}
-                        <p>{{contact['nombre']}}</p>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for contact in contacts %}
-                        <p>{{contact['telefono']}}</p>
-                        {% endfor %}
-                    </td>
-
-                    <td>
-                        {% for contact in contacts %}
-                        <p>{{contact['correo']}}</p>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        <a href="/edit_contact">Editar</a>
-                        <a href="/delete_contact/11">Eliminar</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        {% for contact in contacts %}
+        <div class="card text-center my-5">
+            <div class="card-header">
+                <h4>{{contact.nombre}}</h4>
+            </div>
+            <div class="card-body">
+                <h5>Correo Electronico: {{contact.correo}}</h5>
+                <h5>Telefono: {{contact.telefono}}</h5>
+            </div>
+            <div class="card-footer text-muted">
+                <button class="btn btn-primary">Editar</button>
+                <button class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
 

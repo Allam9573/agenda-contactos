@@ -25,7 +25,7 @@ def register():
     cur = mysql.cursor(pymysql.cursors.DictCursor)
 
     cur.execute("INSERT INTO contactos(nombre, telefono, correo) VALUES(%s, %s, %s)",
-                (nombre, telefono, correo))
+                (nombre, telefono, correo)  )
     mysql.commit()
     cur.close()
     return render_template('response.html', nombre=nombre)

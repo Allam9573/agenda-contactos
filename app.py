@@ -16,7 +16,7 @@ def index():
 def home():
     return render_template('index.html')
 
-
+#rthrhrth
 @app.route('/add_contact', methods=['GET', 'POST'])
 def register():
     nombre = request.form['nombre']

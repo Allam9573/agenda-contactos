@@ -11,6 +11,7 @@
 
 <body>
     {% include 'navbar.html' %}
+    {% if contacts %}
     <div class="container">
         {% for contact in contacts %}
         <div class="card text-center my-5">
@@ -22,14 +23,21 @@
                 <h5>Telefono: {{contact.telefono}}</h5>
             </div>
             <div class="card-footer text-muted">
-                <button class="btn btn-primary">Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
+                <a href="{{url_for('edit_contact', id=contact.id_contacto)}}" class="btn btn-primary">Editar</a>
+                <a href="{{url_for('delete', id_user=contact.id_contacto)}}" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
         {% endfor %}
     </div>
+    {%else%}
+    <div class="container mt-5 text">
+        <div class="card mt-5 p-5 text-center">
+            <h4>No hay contacto guardados</h4>
+            <a href="{{url_for('index')}}"><button class="btn btn-danger">Agregar un Contacto</button></a>
+        </div>
 
-
+    </div>
+    {%endif%}
 </body>
 
 </html>

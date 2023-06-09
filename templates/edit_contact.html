@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <title>{{title}} | {{data.nombre}}</title>
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <div class="container mt-5">
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-header">
+                <h3>Editar Contacto:</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{url_for('update')}}" method="POST">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="{{data.id_contacto}}">
+                        <input type="text" value="{{data.nombre}}" name="nombre" placeholder="Nombre" class="form-control my-2" required>
+                        <input type="text" value="{{data.telefono}}" name="telefono" placeholder="Telefono" class="form-control my-2" required>
+                        <input type="email" value="{{data.correo}}" name="correo" placeholder="Correo Electronico" class="form-control my-2"
+                            required>
+                        <input type="submit" value="Actualizar" class="btn btn-success py-2 btn-block">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

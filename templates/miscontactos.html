@@ -19,6 +19,7 @@
                 <h4>{{contact.nombre}}</h4>
             </div>
             <div class="card-body">
+                <img src="{{url_for('static', filename='img/user.png')}}" width="100" alt="">
                 <h5>Correo Electronico: {{contact.correo}}</h5>
                 <h5>Telefono: {{contact.telefono}}</h5>
             </div>
@@ -28,12 +29,14 @@
             </div>
         </div>
         {% endfor %}
+        <a href="{{url_for('index')}}" class="btn btn-success">Nuevo Contacto</a>
     </div>
     {%else%}
     <div class="container mt-5 text">
         <div class="card mt-5 p-5 text-center">
+            <img src="{{url_for('static', filename='img/phone.png')}}" class="mx-auto" width="100" alt="">
             <h4>No hay contacto guardados</h4>
-            <a href="{{url_for('index')}}"><button class="btn btn-danger">Agregar un Contacto</button></a>
+            <a href="{{url_for('index')}}"><button class="btn btn-success">Agregar un Contacto</button></a>
         </div>
 
     </div>

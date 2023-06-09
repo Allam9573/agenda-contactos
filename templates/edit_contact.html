@@ -18,7 +18,7 @@
                 <form action="{{url_for('update')}}" method="POST">
                     <div class="form-group">
                         <input type="hidden" name="id" value="{{data.id_contacto}}">
-                        <input type="text" value="{{data.nombre}}" name="nombre" placeholder="Nombre" class="form-control my-2" required>
+                        <input type="text" value="{{data.nombre}}" name="nombre" placeholder="Nombre" autofocus class="form-control my-2" required>
                         <input type="text" value="{{data.telefono}}" name="telefono" placeholder="Telefono" class="form-control my-2" required>
                         <input type="email" value="{{data.correo}}" name="correo" placeholder="Correo Electronico" class="form-control my-2"
                             required>
